@@ -31,6 +31,9 @@ androidx-compose-material3 = { group = "androidx.compose.material3", name = "mat
 
 #Tambahkan lib navigation
 androidx-navigation-compose = {module = "androidx.navigation:navigation-compose", version.ref = "navigation"}
+androidx-compose-foundation = { group = "androidx.compose.foundation", name = "foundation" }
+androidx-lifecycle-viewmodel-compose = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "lifecycleViewmodelCompose" }
+
 
 
 [plugins]

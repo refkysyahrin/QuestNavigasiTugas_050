@@ -11,5 +11,37 @@ fun DaftarPeserta(
     onForm: () -> Unit,
     modifier: Modifier = Modifier
 ){
+    val allBiodata = listOf(
+        listOf(
+            "NAMA LENGKAP" to "Refky Muhammad Syahrin",
+            "JENIS KELAMIN" to "Laki-laki",
+            "STATUS PERKAWINAN" to "Belum Menikah",
+            "ALAMAT" to "Texas, JABAR"
+        ),
+        listOf(
+            "NAMA LENGKAP" to "Rafina Raihani",
+            "JENIS KELAMIN" to "Perempuan",
+            "STATUS PERKAWINAN" to "Belum Menikah",
+            "ALAMAT" to "Yokohama, JAPAN"
+        ),
+        listOf(
+            "NAMA LENGKAP" to "Rina Marlina",
+            "JENIS KELAMIN" to "Perempuan",
+            "STATUS PERKAWINAN" to "Menikah",
+            "ALAMAT" to "Ikikwiradikarta, JABAR"
+        ),
+        listOf(
+            "NAMA LENGKAP" to "Pinaky",
+            "JENIS KELAMIN" to "Laki-laki",
+            "STATUS PERKAWINAN" to "Belum Menikah",
+            "ALAMAT" to "Los Angeles, JABAR"
+        ),
+        listOf(
+            "NAMA LENGKAP" to "PapaBurjo",
+            "JENIS KELAMIN" to "Laki-laki",
+            "STATUS PERKAWINAN" to "Madep",
+            "ALAMAT" to "Texasmalaya, JABAR"
+        )
+    )
 
 }

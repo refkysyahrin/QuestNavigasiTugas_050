@@ -38,5 +38,12 @@ fun Dashboard(
 
         Spacer(modifier = Modifier.height(10.dp))
 
+        Text(text = "Aplikasi Formulir Pendaftaran",
+            fontSize = 25.sp)
+
+        Spacer(modifier = Modifier.height(10.dp))
+
+
+
     }
 }

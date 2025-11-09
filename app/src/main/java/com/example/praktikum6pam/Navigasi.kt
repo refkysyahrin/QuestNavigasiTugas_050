@@ -9,7 +9,7 @@ import java.lang.reflect.Modifier
 
 enum class Navigasi{
     Dashboard,
-    DaftarPeserta,
+    Daftar,
     Formulir
 }
 
@@ -26,8 +26,13 @@ fun DataApp(
         composable(route = Navigasi.Dashboard.name) {
             Dashboard(
                 //Tombol di dashboard bisa langsung navigasi ke daftar
+                onNavigate = {
+                    navController.navigate(Navigasi.Daftar.name)
+                }
             )
         }
+
+        
     }
 }
 

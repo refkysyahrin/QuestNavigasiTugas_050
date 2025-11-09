@@ -59,5 +59,15 @@ fun Dashboard(
                 .clip(CircleShape)
         )
 
+        // Identitas halaman utama
+        Spacer(modifier = Modifier.height(80.dp))
+        Column(modifier = Modifier
+            .fillMaxWidth(),
+          //  .padding(top = 80.dp),
+            horizontalAlignment = Alignment.CenterHorizontally){
+            Text(text = stringResource(id = R.string.nama))
+            Text(text = stringResource(id = R.string.nim))
+        }
+
     }
 }

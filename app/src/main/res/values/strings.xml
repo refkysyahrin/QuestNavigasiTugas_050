@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Praktikum6PAM</string>
+
+    <!-- Tampilan awal-->
+    <string name="welcome">Welcome, back!</string>
+    <string name="nama">Refky Muhammad Syahrin</string>
+    <string name="nim">20230140050</string>
+    <string name="masuk">Masuk</string>
+
 </resources>

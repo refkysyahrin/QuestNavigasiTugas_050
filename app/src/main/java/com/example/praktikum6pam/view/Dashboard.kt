@@ -1,10 +1,12 @@
 package com.example.praktikum6pam.view
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -46,8 +48,12 @@ fun Dashboard(
 
         // Gambar halaman utama
         val gambar1 = painterResource(id = R.drawable.logosmandatas)
-
-
+        Image(
+            painter = gambar1,
+            contentDescription = null,
+            modifier = Modifier
+                .size(size =250.dp)
+.padding()
 
 
     }

@@ -1,10 +1,10 @@
 package com.example.praktikum6pam.view
 
-import android.graphics.fonts.Font
+
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
+// import androidx.compose.foundation.layout.Box // Tidak terpakai
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -28,6 +29,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.praktikum6pam.R
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -69,63 +71,70 @@ fun DaftarPeserta(
             "ALAMAT" to "Texasmalaya, JABAR"
         )
     )
-    Box(modifier = Modifier.fillMaxSize()) {
+
+    // Column Utama
+    Column (modifier = Modifier.fillMaxSize()) {
+
         Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(top = 100.dp),
+                .padding(top = 40.dp, bottom = 16.dp)
+                .size(size = 30.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ){
-            Text(text = stringResource(id = R.string.list))
+            Text(text = stringResource(id = R.string.list), fontSize = 30.sp, fontWeight = FontWeight.Bold, color = Color.Black)
+        }
 
-            LazyColumn(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .padding(16.dp)
-            ) {
-                itemsIndexed(allBiodata) {index, biodata ->
-                    //untuk biodata
-                    Column(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .clip(RoundedCornerShape(16.dp))
-                            .background(color = Color.DarkGray)
-                            .padding(20.dp)
-                    ){
-                        biodata.chunked(2).forEach { rowItems ->
-                            Row(
-                                modifier = Modifier
-                                    .fillMaxWidth()
-                                    .padding(vertical = 8.dp),
-                                horizontalArrangement = Arrangement.SpaceBetween
-                            ){
-                                rowItems.forEach { (label, value) ->
-                                    Column(modifier = Modifier.weight(1f)) {
-                                        Text(
-                                            text = label,
-                                            style = MaterialTheme.typography.labelMedium.copy(
-                                                fontWeight = FontWeight.Bold,
-                                                color = Color.Black
-                                            )
+
+        // LazyColumn (List yang bisa di-scroll)
+        LazyColumn(
+            modifier = Modifier
+                .weight(1f)
+                .padding(horizontal = 16.dp)
+        ) {
+            itemsIndexed(allBiodata) {index, biodata ->
+                //untuk biodata
+                Column(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .clip(RoundedCornerShape(16.dp))
+                        .background(color = Color.LightGray)
+                        .padding(20.dp)
+                ){
+                    biodata.chunked(2).forEach { rowItems ->
+                        Row(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(vertical = 8.dp),
+                            horizontalArrangement = Arrangement.SpaceBetween
+                        ){
+                            rowItems.forEach { (label, value) ->
+                                Column(modifier = Modifier.weight(1f)) {
+                                    Text(
+                                        text = label,
+                                        style = MaterialTheme.typography.labelMedium.copy(
+                                            fontWeight = FontWeight.Bold,
+                                            color = Color.Black
                                         )
-                                        Text(
-                                            text = value,
-                                            style = MaterialTheme.typography.bodyMedium.copy(
-                                                color = Color.Blue
-                                            )
+                                    )
+                                    Text(
+                                        text = value,
+                                        style = MaterialTheme.typography.bodyMedium.copy(
+                                            color = Color.Blue
                                         )
-                                    }
+                                    )
                                 }
                             }
                         }
                     }
-                    Spacer(modifier = Modifier.height(16.dp))
                 }
+                Spacer(modifier = Modifier.height(16.dp))
+            }
         }
-    }
+
+
         Row(
             modifier = Modifier
-                .align(Alignment.BottomCenter)
                 .fillMaxWidth()
                 .background(Color.White)
                 .padding(vertical = 12.dp),
@@ -143,5 +152,6 @@ fun DaftarPeserta(
                 border = BorderStroke(1.dp, Color.DarkGray)
             ) { Text("Formulir", color = Color.Black) }
         }
-}
+
+    }
 }

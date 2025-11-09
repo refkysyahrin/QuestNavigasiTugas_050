@@ -16,4 +16,9 @@
     <string name="beranda">Beranda</string>
     <string name="formulir">Formulir</string>
 
+    <!--  Formulir-->
+    <string name="kembali">Kembali</string>
+    <string name="submit">Submit</string>
+    <string name="judul_formulir">Formulir Pendaftaran</string>
+
 </resources>
